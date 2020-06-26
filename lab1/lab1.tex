@@ -80,63 +80,63 @@
 
 \lecture{}{Лето 2020}{}{Толпекин Максим}
  
-Since $\mu$ is known to be a multiplicative function, an appeal to
-Theorem 6-4 is legitimate; this result guarantees that $F$ is multiplicative
-too.~~Thus, if the canonical factorization of $n$ is $n=p^{k_1}_1 p^{k_2\dots}_2 p^{k_r}_r$,
-then $F(n)$ is the product of the values assigned to $F$ for the prime powers in this representation:
+Поскольку $\mu$ как известно является мультипликативной функцией, обращение к 
+Теорема 6-4 является законной; этот результат гарантирует, что  $F$ также мультипликативна.
+~~Таким образом, если каноническая факторизация $n$ является $n=p^{k_1}_1 p^{k_2\dots}_2 p^{k_r}_r$,
+точга $F(n)$ произведение значений, присвоенных $F$ для простых степеней в этом представлении:
 $$F(n)=F(p^{k_1}_1)F(p^{k_2}_2)\dots F(p^{k_r}_r)=0.$$
-\begin{flushleft} We record this result as\\[5mm] \end{flushleft}
+\begin{flushleft}Мы запишем этот результат как \\[5mm] \end{flushleft}
 {\setlength{\leftskip}{9mm}
 	\setlength{\rightskip}{9mm}
-\noindent{\sc Theorem 6--6.}
-{\it For each positive integer $n\geqslant 1$,}
+\noindent{\sc Теорема 6--6.}
+{\it Для каждого положительного числа $n\geqslant 1$,}
 $$\sum_{d|n}\mu(d)=\begin{cases}
 1&\text{if $n=1$} \\
 0&\text{if $n>1$}
 \end{cases}
 $$\\
-{\it where d runs through the positive divisors of n.}\\
+{\it где $d$ является положительными делителями $n$.}\\
 
 }
 
-{For an illustration of this last theorem consider $n=10$. The divisors of 10 are 1, 2, 5, 10 and the desired sum is}\\
+{Для иллюстрации этой теоремы, рассмотрим  $n=10$. Делителями числа  10 являются  1, 2, 5, 10, а искомая сумма равна }\\
 \begin{align*}
 \sum_{d|10}\mu(d)=\mu(1)+\mu(2)\mu(5)\mu(10)&\\
 =1+(-1)+(-1)+1=0&.\\
 \end{align*}
 
-The full significance of M\"obius' function shold become apparent with the next theorem.\\
+Полное значение функции Мебиуса должно стать очевидным со следующей теоремой.\\
 
 {\setlength{\leftskip}{9mm}
 	\setlength{\rightskip}{9mm}
-\noindent{\sc ~~Theorem 6--7} (M\"obius Inversion Formula). {\it Let $F$ and $f$ be two number-theoretic~~ functions related by the formula}\\
+\noindent{\sc ~~Теорема 6--7} (Формула Инверсии Мебиуса). {\it Пусть $F$ и $f$ теоретико-числовые~~ функции, связанные формулой}\\
 
 }
 \begin{align*}
 F(n)&=\sum_{d|n}f(d).\\
-\intertext{Then}
+\intertext{Затем}
 f(n)&=\sum_{d|n}\mu(d)F(n/d)=\sum_{d|n}\mu(n/d)F(d).
 \end{align*}
-{\it Proof:~~} The two sums mentioned in the conclusions of the theorem are seen to be the same upon replacing the dummy index $d$ by $d'=n|d$; as $d$ ranges over all positive divisors of $n$, so does $d'$.\\
+{\it Доказательство:~~} Две суммы, упомянутые в заключении теоремы считаются одинаковыми при замене фиктивного индекса $d$ на $d'=n|d$; как $d$включает все положительные делители $n$, так и $d'$.\\
 
-Carrying out the required computation, we get\\
+Проведя необходимые вычисления, получим\\
 
 $$
 (1)~~~\sum_{d|n}\mu(d)F(n/d)=\sum_{d|n}\left(\mu(d)\sum_{c|(n/d)}f(c)\right)=\sum_{d|n}\left(\sum_{c|(n/d)}\mu(d)f(c)\right).
 $$
-It is easily verified that $d|n$ and $c|(n/d)$ if and only if $c|n$ and $d|(n/c)$. Because of this, the last expression in (1) becomes\\
+Легко проверить, что  $d|n$ и $c|(n/d)$ тогда и только тогда $c|n$ и $d|(n/c)$.Из-за этого последнее выражение в (1) становится\\
 \begin{align*}
 (2)~~~~~~~~\sum_{d|n}\left(\sum_{c|(n/d)}\mu(d)f(c)\right)&=
 \sum_{c|n}\left(\sum_{d|(n/d)}f(c)\mu(d)\right)\\
 &=\sum_{c|n}\left(f(c)\sum_{d|(n/c)}\mu(d)\right).\\
 \end{align*}
-In compliance with Theorem 6--6, the sum $\sum_{d|(n/c)}\mu(d)$ must vanish except when $n/c=1$ (that is, when $n=c$), in which case it is equal to 1; the upshot is that the right-hand side of (2) simplifies to\\
+В соответствии с Теоремой 6--6, сумма $\sum_{d|(n/c)}\mu(d)$ должна быть равна нулю, за исключением $n/c=1$ (то есть, кода $n=c$), в этом случае он равен 1; в результате правая часть (2) упрощается до \\
 \begin{align*}
 \sum_{c|n}\left(f(c)\sum_{d|(n/c)}\mu(d)\right)=\sum_{c=n}f(c)\cdot 1=f(n),
 \end{align*}
-giving us the stated result.\\
+давая нам заявленный результат.\\
 
-Let us use $n=10$ again to illustrate how the double sum in (2) is turned around. In this instance, we find that
+Давайте снова используем $n=10$, чтобы проилюстрировать, как двойная сумма в (2) оборачивается. В данном случае мы находим, что
 
 \begin{align*}
 \sum_{d|10}\left(\sum_{c|(10/d)}\mu(d)f(c)\right)&=
@@ -147,26 +147,26 @@ Let us use $n=10$ again to illustrate how the double sum in (2) is turned around
 &=\sum_{c|10}\left(\sum_{d|(10/c)}f(c)\mu(d)\right).\\
 \end{align*}
 
-To see how M\"obius inversion works in a particular case, we remind the reader that the functions $\tau$ and $\sigma$ may both be described as ``sum function'':\\
+Чтобы увидеть как раблтает инверсия в конкретном случае,мы напомним читателю, что функции $\tau$ и $\sigma$ обе могут быть описаны как ``сумма функций'':\\
 $$\tau(n) = \sum \limits_{d\mid n} 1
 \text{\quad and\quad}
 \sigma(n) =\sum \limits_{d\mid n} d$$
-Theorem 6--7 tells us that these formulas may be inverted to give\\
+Теорема 6--7 показывает нам что эти формулы могут быть инвертированны чтобы получить\\
 $$
 1=\sum_{d|n}\mu(n/d)\tau(d)
 \text{\quad and\quad} 
 n=\sum_{d|n}\mu(n/d)\sigma(d),\\
 $$
-valid for all $n\ge1$.\\
+допустимо для всех $n\ge1$.\\
 
-Theorem 6--4 insures that if $f$ is a multiplicative function, then so is
+Теорема 6--4 гарантирует, что если $f$ мультипликативная функция,то, так же как и
 $F(n)=\sum_{d|n}f(d)$.
-Turning the situation around, one might ask whether the multiplicative nature of $F$ forces that of $f$. 
-Suprisingly enough, this is exactly what happens.\\[5mm]
-{\sc Theorem 6--8.} {\it If $F$ is a multiplicative function and}\\
+Перевернув ситуацию, можно было спросить является ли мультипликативная природа $F$ силами, которые из $f$. 
+Довольно удивительно, это именно то, что происходит.\\[5mm]
+{\sc Теорема 6--8.} {\it Если $F$ мультипликативная функция и}\\
 $$F(n)=\sum_{d|n}f(d),$$\\
-{\it then $f$ is also multiplicative.}\\[5mm]
-{\itshape Proof:}\: Let $m$ and $mn$ can be uniquely written as $d=d_1d_2$, where $d_1|m,~d_2|n,$ and gcd$(d_1{,} d_2)=1$. Thus, using the inversion formula,\\
+{\it тогда $f$ также мультипликативна.}\\[5mm]
+{\itshape Доказательство:}\: Пусть $m$ и $mn$ относитьно простые числа. Вспомним что любой делитель $d$ из $mn$ может быть однозначно записан как $d=d_1d_2$, где $d_1|m,~d_2|n,$ и НОД$(d_1{,} d_2)=1$. Таким образом, используя формулу инверсии,\\
 \begin{align*}
 f(mn)&=\sum_{d|mn}\mu(d)F\left(\frac{mn}d \right)\\
 &=\sum_{\begin{matrix} d_1 \\ d_2 \end{matrix}|\begin{matrix} m \\ n \end{matrix}}\mu(d_1d_2)F\left(\frac{mn}d \right)\\
@@ -174,30 +174,30 @@ f(mn)&=\sum_{d|mn}\mu(d)F\left(\frac{mn}d \right)\\
 \mu(d_1)\mu(d_2)F\left(\frac m{d_1}\right)F\left(\frac n{d_2}\right)\\
 &=\sum_{d_1|m}\mu(d_1)F\left(\frac m{d_1}\right)\sum_{d_2|n}\mu(d_2)F\left( \frac n{d_2}\right)=f(m)f(n),\\
 \end{align*}
-which is the assertion of the theorem. Needless to say, the multiplicative character of $\mu$ and of $F$ is crucial to the above calculation.
+что и является утверждением теоремы. Излишне говорить, что мультипликативные  $\mu$ и $F$ имеют решающее значение для приведённого выше расчёта.
 
 	\begin{center}
-	\LARGE {\textsf {\textbf {PROBLEMS 6.2}}}\\[5mm]
+	\LARGE {\textsf {\textbf {ПРОБЛЕМЫ 6.2}}}\\[5mm]
 \end{center}
 \begin{enumerate}
 \item 	\begin{enumerate}
-\item For each positive integer $n$, show that\\
+\item Для каждого положительного целого числа $n$, покажите, что\\
 $$\mu(n)\mu(n+1)\mu(n+2)\mu(n+3)=0.$$
-\item For any integer $n\ge3$, show that
+\item Для любого числа $n\ge3$,показать что
 $\sum_k^n=_1\mu(k!)=1.$
 \end{enumerate}
-\item The {\it Mangoldt function} $\Lambda$ is defined by\\
+\item {\it Функция Мангольда} $\Lambda$ определяется следующим образом\\
 $$\Lambda(n)=\begin{cases}
-\log{p},&\text{if $n=p^k$, where $p$ is aprime and $k\ge1$} \\
-0,&\text{otherwise}
+\log{p},&\text{если $n=p^k$, где $p$ простое $k\ge1$} \\
+0,&\text{в противном случае}
 \end{cases}$$\\
-Prove that $\Lambda(n)=\sum_{d|n}\mu(n/d)\log{d}=-\sum_{d|n}\mu(d)\log{d}.$ [{\it Hint:} ~First show that $\sum_{d|n}\Lambda(d)=\log{n}$ and then apply the M\"obius Inversion Formula.]
-\item Let $n=p_1^{k_1}p_2^{k_2\dots}p_r^{k_r}$ be the prime factorization of the integer $n>1$.\\
- If $f$ is a multiplicative function, prove that\\
+Доказать, что $\Lambda(n)=\sum_{d|n}\mu(n/d)\log{d}=-\sum_{d|n}\mu(d)\log{d}.$ [{\it Подсказка:} ~Покажите, что $\sum_{d|n}\Lambda(d)=\log{n}$ а затем, примените формулу инверсии Мёбиуса.]
+\item Пусть $n=p_1^{k_1}p_2^{k_2\dots}p_r^{k_r}$ факторизация простого числа $n>1$.\\
+ Если $f$ мультипликативная функция, докажите, что\\
 $$\sum_{d|n}\mu(d)f(d)=(1-f(p_1))(1-f(p_2))^{\dots} (1-f(p_r)).$$
-[{\itshape Hint:}\: By the Theorem 6-4, the function $F$ defined by $F(n)=\sum_{d|n}\mu(d)f(d)$\\
- is multiplicative; hence, $f(n)$ is the product of the values $F(p_i^{k_1})$.]
-\item If the integer $n>1$ has the prime factorization $n=p_1^{k_1}p_2^{k_2\dots}p_r^{k_r}$, use Problem 3 to establish the following:
+[{\itshape Подсказка:}\: По Теореме 6-4, функция $F$ определяется $F(n)=\sum_{d|n}\mu(d)f(d)$\\
+ является мультипликативной; следовательно, $f(n)$ является произведением $F(p_i^{k_1})$.]
+\item Если целое число $n>1$ имеет простую факторизацию $n=p_1^{k_1}p_2^{k_2\dots}p_r^{k_r}$, используете Проблему 3 чтобы установить следующее:
 \begin{enumerate}
 	\item $\sum_{d|n}\mu(d)\tau(d)=(-1)^r;$
 	\setlength{\parskip}{3mm}
@@ -205,25 +205,25 @@ $$\sum_{d|n}\mu(d)f(d)=(1-f(p_1))(1-f(p_2))^{\dots} (1-f(p_r)).$$
 	\item $\sum_{d|n}\mu(d)\d=(1-1/p_1)(1-1/p_2)^{\dots}(1-1/p_r);$
 	\item $\sum_{d|n}d\mu(d)=(1-p_1)(1-p_2)^{\dots}(1-p_r).$
 \end{enumerate}
-\item Let $S(n)$ denote the number of sqeare-free divisors of $n$.~ Establish that\\
+\item Пусть $S(n)$обозначает число бесквадратных делителей $n$.~ Установим, что\\
 $$S(n)=\sum_{d|n}|\mu(d)|=2^r$$
-where $r$ is the number of distinct prime divisors of $n$. [{\itshape Hint:} $S$ is a multiplicative function.] 
-\item Find formulas for 
-$\sum_{d|n}\mu^2(d)/\tau(d)$ and
-$\sum_{d|n}\mu^2(d)/\sigma(d)$ in terms of the prime\\ factorization of $n$.
-\item The {\it Liouville $\lambda$-function} is defined by $\lambda(1)=1$ and $\lambda(n)=(-1)^{k_1+k_2+\dots+k_r},$\\
-if the prime factorization of $n>1$ is $n=p_1^{k_1}p_2^{k_2\dots}p_r^{k_r}.$ For instance,\\
+где $r$ число простых делителей $n$. [{\itshape Подсказка:} $S$ это мультипоикативная функция.] 
+\item Найдите формулы для 
+$\sum_{d|n}\mu^2(d)/\tau(d)$ и
+$\sum_{d|n}\mu^2(d)/\sigma(d)$ в терминах простой факторизации  $n$.
+\item The {\it Функция Лиовиля $\lambda$} определяется $\lambda(1)=1$ и $\lambda(n)=(-1)^{k_1+k_2+\dots+k_r},$\\
+если простая факторизация $n>1$ равна $n=p_1^{k_1}p_2^{k_2\dots}p_r^{k_r}.$ Например,\\
 $\lambda(360)=\lambda(2^3 \cdot 3^2 \cdot5)=(-1)^{3+2+1}=(-1)^6=1.$
 \begin{enumerate}
-\item Prove that $\lambda$ is a multiplicative function.
-\item Given a positive integer $n$, verify that\\
+\item Докажите, что $\lambda$ является мультипликативной функцией.
+\item Учитывая положительное число $n$,убедитесь, что\\
 $$\sum_{d|n}\lambda(d)=\begin{cases}
-1,&\text{if $n=m^2$ for some integer $m$}\\
-0,&\text{otherwise}
+1,&\text{Если $n=m^2$ для некоторого целого числа $m$}\\
+0,&\text{в противном случае}
 \end{cases} $$
 \end{enumerate}
-\item If the integer $n>1$ has the prime factorization $n=p_1^{k_1}p_2^{k_2\dots}p_r^{k_r}$, establish\\
-that $\sum_{d|n}\mu(d)\lambda(d)=2^r.$
+\item Если целое число $n>1$ имеет простую факторизацию $n=p_1^{k_1}p_2^{k_2\dots}p_r^{k_r}$, установить\\
+что $\sum_{d|n}\mu(d)\lambda(d)=2^r.$
 	
 	
 	
